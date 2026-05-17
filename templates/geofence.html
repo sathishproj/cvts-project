@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<h1>Geo-Fence Setup</h1>
+<div class="split">
+<div class="card form-card">
+<label>Boundary Name</label><input id="fenceName" value="Hyderabad Operating Zone">
+<label>Center Latitude</label><input id="centerLat" value="17.3850">
+<label>Center Longitude</label><input id="centerLng" value="78.4867">
+<label>Radius in Meters</label><input id="radius" value="12000">
+<button onclick="saveFence()">Submit / View</button>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Define vehicle operating zone with latitude, longitude and radius. It is used for permitted route monitoring.</p></div>
+</div>
+<div class="card"><h2>Geo-Fence Records</h2><div class="table-wrap"><table id="fenceTable"></table></div></div>
+<script>loadFences();</script>
+{% endblock %}

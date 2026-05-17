@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<h1>Reports Generation</h1>
+<div class="split">
+<div class="card form-card">
+<label>Vehicle Number</label><input id="reportVehicle" value="TS09AB1234">
+<label>Start Date</label><input id="startDate" value="2026-04-01 08:00">
+<label>End Date</label><input id="endDate" value="2026-04-01 18:00">
+<button onclick="generateReport()">Generate Report</button>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Generate route report using saved tracking logs. Average speed and total records are calculated from localStorage data.</p></div>
+</div>
+<div class="card"><h2>Report Output</h2><div class="table-wrap"><table id="reportsTable"></table></div></div>
+<script>loadReports();</script>
+{% endblock %}

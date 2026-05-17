@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block content %}
+<h1>Live GPS Tracking</h1>
+<div class="split">
+<div class="card form-card">
+<label>Selected Vehicle</label><select id="trackVehicle"></select>
+<label>Latitude</label><input id="latitude" value="17.3850">
+<label>Longitude</label><input id="longitude" value="78.4867">
+<label>Speed</label><input id="speed" value="42">
+<label>Location</label><input id="location" value="Hyderabad">
+<button onclick="saveTracking()">Submit / Track</button>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Submit tracking data. If speed is above 80 km/h, an overspeed alert is generated automatically.</p></div>
+</div>
+<div class="card"><h2>Tracking Output</h2><div class="table-wrap"><table id="trackingTable"></table></div></div>
+<script>fillVehicleDropdown();loadTracking();</script>
+{% endblock %}

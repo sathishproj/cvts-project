@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero">
+  <div>
+    <h1>Dashboard</h1>
+    <p>Click any card to expand complete records below.</p>
+  </div>
+  <button onclick="resetDemoData()">Reset Demo Data</button>
+</section>
+
+<div class="grid">
+  <div class="stat users" onclick="showDashboardSection('users')"><h2 id="userCount">0</h2><p>Users</p><small>Click to view 20+ details</small></div>
+  <div class="stat vehicles" onclick="showDashboardSection('vehicles')"><h2 id="vehicleCount">0</h2><p>Vehicles</p><small>Click to view 20+ details</small></div>
+  <div class="stat tracking" onclick="showDashboardSection('tracking')"><h2 id="trackingCount">0</h2><p>Tracking Logs</p><small>Click to view 20+ details</small></div>
+  <div class="stat alerts" onclick="showDashboardSection('alerts')"><h2 id="alertCount">0</h2><p>Alerts</p><small>Click to view 20+ details</small></div>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    <h2 id="detailTitle">Section Details</h2>
+    <span class="badge">Expandable View</span>
+  </div>
+  <div id="detailBox" class="table-wrap"></div>
+</div>
+
+<div class="card">
+  <div class="card-title"><h2>Latest Vehicle Tracking Details</h2><span class="badge green">Live Output</span></div>
+  <div class="table-wrap"><table id="dashboardTable"></table></div>
+</div>
+<script>loadDashboard();showDashboardSection('tracking');</script>
+{% endblock %}

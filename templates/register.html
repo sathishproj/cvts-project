@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block content %}
+<h1>User Registration</h1>
+<div class="split">
+<div class="card form-card">
+  <label>Name</label><input id="name" value="Fleet Supervisor">
+  <label>Email</label><input id="regEmail" value="supervisor@example.com">
+  <label>Password</label><input id="regPassword" type="password" value="supervisor123">
+  <label>Role</label><select id="regRole"><option>User</option><option>Admin</option><option>Operator</option></select>
+  <button onclick="saveUser()">Submit / View</button>
+  <a class="linkbtn secondary" href="/login">Go to Login</a>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Register a new fleet user. After saving, the same user can login from the login screen because data is stored in browser localStorage.</p></div>
+</div>
+<div class="card"><h2>Registered Users</h2><div class="table-wrap"><table id="usersTable"></table></div></div>
+<script>loadUsers();</script>
+{% endblock %}

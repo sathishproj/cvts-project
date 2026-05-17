@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<h1>Vehicle Registration</h1>
+<div class="split">
+<div class="card form-card">
+<label>Vehicle Number</label><input id="vehicleNo" value="TS09AB1234">
+<label>Driver Name</label><input id="driverName" value="Ramesh">
+<label>Vehicle Type</label><input id="vehicleType" value="School Bus">
+<label>Status</label><select id="vehicleStatus"><option>Active</option><option>Inactive</option><option>Maintenance</option></select>
+<button onclick="saveVehicle()">Submit / View</button>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Add a new vehicle with driver details. It will appear in dashboard, tracking dropdown, and reports.</p></div>
+</div>
+<div class="card"><h2>Vehicle Details</h2><div class="table-wrap"><table id="vehiclesTable"></table></div></div>
+<script>loadVehicles();</script>
+{% endblock %}

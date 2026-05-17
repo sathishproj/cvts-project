@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Vehicle Tracking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+<div class="login-shell">
+  <div class="login-left">
+    <h1>Cloud-Based Vehicle Tracking System</h1>
+    <p>Real-time fleet monitoring, geo-fence validation, anomaly alerts, and route reporting demo.</p>
+    <div class="login-metrics">
+      <div><b>25+</b><span>Users</span></div>
+      <div><b>25+</b><span>Vehicles</span></div>
+      <div><b>25+</b><span>Logs</span></div>
+    </div>
+  </div>
+  <div class="login-card">
+    <h2>Login Screen</h2>
+    <div class="hint">
+      <b>Demo Logins</b><br>
+      admin@example.com / admin123<br>
+      manager@example.com / manager123<br>
+      operator@example.com / operator123
+    </div>
+    <label>Email</label>
+    <input id="email" value="admin@example.com">
+    <label>Password</label>
+    <input id="password" type="password" value="admin123">
+    <label>Role</label>
+    <select id="role"><option>Admin</option><option>User</option></select>
+    <button onclick="login()">Submit / View</button>
+    <a class="linkbtn secondary" href="/register">New User Register</a>
+    <p id="msg"></p>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

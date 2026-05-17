@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<h1>Alerts Report</h1>
+<div class="split">
+<div class="card form-card">
+<label>Vehicle</label><input id="alertVehicle" value="TS09AB1234">
+<label>Alert Type</label><select id="alertType"><option>GEOFENCE</option><option>OVERSPEED</option><option>ANOMALY</option><option>LOW SIGNAL</option></select>
+<label>Message</label><input id="alertMessage" value="Vehicle is outside permitted zone">
+<label>Status</label><select id="alertStatus"><option>Open</option><option>Closed</option><option>Under Review</option></select>
+<button onclick="saveAlert()">Submit / View</button>
+</div>
+<div class="card note-card"><h2>Scenario</h2><p>Alerts can be created manually or automatically from live tracking when abnormal speed is detected.</p></div>
+</div>
+<div class="card"><h2>Generated Alerts</h2><div class="table-wrap"><table id="alertsTable"></table></div></div>
+<script>loadAlerts();</script>
+{% endblock %}
